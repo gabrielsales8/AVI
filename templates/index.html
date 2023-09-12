@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Concessionária JM Veículos</title>
+    <link rel="stylesheet" type="text/css" href="static\styles.css">
+    <link rel="icon" href="{{ url_for('static', filename='favicon-16x16.png') }}" type="image/png">
+
+
+    
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logotipo da Concessionária JM Veículos">
+
+        <h1>Concessionária JM Veículos</h1>
+    </header>
+    
+    
+    <h2>Lista de Veículos</h2>
+    <table border="1">
+    <tr>
+        <th>Tipo</th>
+        <th>Cor</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Ano de Fabricação</th>
+        <th>Estado</th>
+        <th>Km Rodados</th>
+        <th>Passagem por Leilão</th>
+        <th>Formas de Pagamento</th>
+        <th>Ações</th>
+    </tr>
+    {% for veiculo in veiculos %}
+        <tr>
+            <td>{{ veiculo[1] }}</td>
+            <td>{{ veiculo[2] }}</td>
+            <td>{{ veiculo[3] }}</td>
+            <td>{{ veiculo[4] }}</td>
+            <td>{{ veiculo[5] }}</td>
+            <td>{{ veiculo[6] }}</td>
+            <td>{{ veiculo[7] }}</td>
+            <td>{{ 'Sim' if veiculo[8] else 'Não' }}</td>
+            <td>{{ veiculo[9] }}</td>
+            <td>
+                <a href="{{ url_for('editar_veiculo', id=veiculo[0]) }}" class="editar-btn">Editar</a>
+                <a href="{{ url_for('excluir_veiculo', id=veiculo[0]) }}" class="excluir-btn">Excluir</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+    <br>
+    
+    <form method="POST" action="/adicionar_veiculo" id="adicionar-veiculo-form">
+        <h2>Adicionar Novo Veículo</h2>
+        <label>Tipo (carro ou moto):</label>
+        <input type="text" name="tipo" required><br>
+        <label>Cor:</label>
+        <input type="text" name="cor" required><br>
+        <label>Marca:</label>
+        <input type="text" name="marca" required><br>
+        <label>Modelo:</label>
+        <input type="text" name="modelo" required><br>
+        <label>Ano de Fabricação:</label>
+        <input type="number" name="ano_fabricacao" required><br>
+        <label>Estado (novo ou usado):</label>
+        <input type="text" name="estado" required><br>
+        <label>Km Rodados:</label>
+        <input type="number" name="km_rodados" required><br>
+        <label>Passagem por Leilão (0 para Não, 1 para Sim):</label>
+        <input type="number" name="passagem_por_leilao" required><br>
+        <label>Formas de Pagamento:</label>
+        <input type="text" name="formas_pagamento" required><br>
+        <input type="submit" value="Adicionar">
+    </form>
+
+    <script>
+        
+        document.getElementById("adicionar-veiculo-form").addEventListener("submit", function (event) {
+            event.preventDefault(); 
+            alert("Veículo adicionado com sucesso!"); 
+            this.submit();
+        });
+    </script>
+    
+
+    
+
+</body>
+</html>

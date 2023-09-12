@@ -1,0 +1,140 @@
+/* Estilo para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Cor de fundo cinza claro */
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* Estilo para o cabeçalho (header) */
+header {
+    background-color: #333; /* Cor de fundo da barra de navegação */
+    display: flex; /* Usando flexbox para alinhar os elementos horizontalmente */
+    align-items: center; /* Alinha os elementos verticalmente ao centro */
+    justify-content: space-between; /* Espaço entre os elementos */
+    padding: 10px 20px; /* Espaçamento interno */
+}
+
+/* Estilo para a logo */
+header img {
+    width: 100px; /* Largura da logo, ajuste conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Estilo para o título */
+header h1 {
+    margin: 0; /* Remove margens padrão */
+    color: white; /* Cor do texto */
+}
+
+th {
+    background-color: #343a40; /* Cor de fundo cinza escuro */
+    color: #fff; /* Cor do texto branca */
+    padding: 10px;
+}
+
+/* Estilo para as células da tabela */
+td {
+    padding: 10px;
+}
+
+/* Estilo para a tabela */
+table {
+    border-collapse: collapse; /* Mesclar bordas de células */
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* Estilo para links */
+a {
+    text-decoration: none;
+    color: #007bff; /* Cor do link azul */
+}
+
+/* Estilo para botões de edição */
+.editar-btn {
+    background-color: #28a745; /* Cor de fundo verde */
+    color: #fff; /* Cor do texto branca */
+    padding: 5px 10px; /* Espaçamento interno */
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px; /* Espaçamento entre botões */
+}
+
+/* Estilo para botões de exclusão */
+.excluir-btn {
+    background-color: #dc3545; /* Cor de fundo vermelha */
+    color: #fff; /* Cor do texto branca */
+    padding: 5px 10px; /* Espaçamento interno */
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px; /* Espaçamento entre botões */
+}
+
+/* Estilo para o formulário de adição de veículo */
+
+
+/* Estilo para o botão de adição */
+input[type="submit"] {
+    background-color: #007bff; /* Cor de fundo azul */
+    color: #fff; /* Cor do texto branca */
+    padding: 5px 10px; /* Espaçamento interno */
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilo para o rodapé */
+.footer {
+    text-align: center; /* Centralizar texto */
+    background-color: #343a40; /* Cor de fundo cinza escuro */
+    color: #fff; /* Cor do texto branca */
+    padding: 10px 0; /* Espaçamento interno superior e inferior */
+}
+
+
+/* Estilos para o formulário "Adicionar Novo Veículo" */
+form {
+    
+        background-color: #fff;
+        
+        border-radius: 5px;
+        padding: 20px;
+        max-width: 400px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-left: 38%;
+        align-items: center;
+    
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Estilos específicos para os campos de texto */
+form input[type="text"],
+form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    
+    border-radius: 3px;
+}
+
+form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Veículo</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='edit_styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon-16x16.png') }}" type="image/png">
+    
+
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logotipo da Concessionária JM Veículos">
+
+        <h1>Editar Veículo</h1>
+    </header>
+    
+    
+    <form method="POST" action="/editar_veiculo/{{ veiculo[0] }}" id="editar-veiculo-form">
+        <label>Tipo (carro ou moto):</label>
+        <input type="text" name="tipo" value="{{ veiculo[1] }}" required><br>
+        <label>Cor:</label>
+        <input type="text" name="cor" value="{{ veiculo[2] }}" required><br>
+        <label>Marca:</label>
+        <input type="text" name="marca" value="{{ veiculo[3] }}" required><br>
+        <label>Modelo:</label>
+        <input type="text" name="modelo" value="{{ veiculo[4] }}" required><br>
+        <label>Ano de Fabricação:</label>
+        <input type="number" name="ano_fabricacao" value="{{ veiculo[5] }}" required><br>
+        <label>Estado (novo ou usado):</label>
+        <input type="text" name="estado" value="{{ veiculo[6] }}" required><br>
+        <label>Km Rodados:</label>
+        <input type="number" name="km_rodados" value="{{ veiculo[7] }}" required><br>
+        <label>Passagem por Leilão (0 para Não, 1 para Sim):</label>
+        <input type="number" name="passagem_por_leilao" value="{{ 1 if veiculo[8] else 0 }}" required><br>
+        <label>Formas de Pagamento:</label>
+        <input type="text" name="formas_pagamento" value="{{ veiculo[9] }}" required><br>
+        <input type="submit" value="Salvar">
+    </form>
+    
+    <script>
+        
+        document.getElementById("editar-veiculo-form").addEventListener("submit", function (event) {
+            event.preventDefault(); 
+            alert("Veículo editado com sucesso!"); 
+            this.submit(); 
+        });
+    </script>
+    
+    
+</body>
+</html>
